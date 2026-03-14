@@ -1,15 +1,7 @@
 import readlineSync from "readline-sync"
 import start from "./cli.js";
-import { getRandomInt } from "./utils.js";
+import { getRandomInt, divider } from "./utils.js";
 
-const divider = (a, b) => {
-  while (b !== 0) {
-    const temp = b;
-    b = a % b;
-    a = temp;
-  }
-  return a;
-}
 const gcd = () => {
   const name = start()
   for (let i = 0; i < 3; i += 0) {
@@ -23,7 +15,7 @@ const gcd = () => {
       i++
     }
     else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was '${awaitAnswer}'.\nLet's try again, ${name}!`)
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${awaitAnswer}'.\nLet's try again, ${name}!`)
       i = 0
     }
   }

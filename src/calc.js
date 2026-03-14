@@ -1,13 +1,8 @@
 import readlineSync from "readline-sync"
 import start from "./cli.js";
-import { getRandomInt } from "./utils.js";
+import { getRandomInt, randomOperator } from "./utils.js";
 
-function randomOperator() {
-  const ops = ['*', '-', '+']
-  let i = getRandomInt(0, 2)
-  return ops[i]
-}
-export function brainCalc() {
+const brainCalc = () => {
   const name = start()
   for (let i = 0; i < 3; i += 0) {
     console.log(`What is the result of the expression?`)
@@ -40,3 +35,4 @@ export function brainCalc() {
   }
   console.log(`Congratulations, ${name}!`)
 }
+export default brainCalc
