@@ -7,7 +7,7 @@ function randomOperator() {
   let i = getRandomInt(0, 2)
   return ops[i]
 }
-const brainCalc = () => {
+export function brainCalc() {
   const name = start()
   for (let i = 0; i < 3; i += 0) {
     console.log(`What is the result of the expression?`)
@@ -41,5 +41,3 @@ const brainCalc = () => {
   }
   console.log(`Congratulations, ${name}!`)
 }
-
-export default brainCalc

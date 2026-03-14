@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import readlineSync from "readline-sync";
 import start from "./cli.js";
-export function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+export function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min
 }
 const isEven = (num) => {
   if (num % 2 === 0) {
@@ -12,7 +12,7 @@ const isEven = (num) => {
 }
 
 
-const brainEven = () => {
+export function brainEven() {
   // console.log("Welcome to the Brain Games!");
   // const name = readlineSync.question("May I have your name? ");
   // console.log(`Hello, ${name}!`);
@@ -21,7 +21,7 @@ const brainEven = () => {
 
 
   for (let i = 0; i < 3; i += 0) {
-    const questNum = getRandomInt(100)
+    const questNum = getRandomInt(100, 0)
 
     const awaitAnswer = isEven(questNum)
     console.log(`Question: ${questNum}`)
@@ -39,5 +39,3 @@ const brainEven = () => {
   console.log(`Congratulations, ${name}!`)
 }
 brainEven()
-
-export default brainEven
