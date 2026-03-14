@@ -27,8 +27,8 @@ export function brainCalc() {
         awaitAnswer = numOne + numTwo
         break
     }
-    const userAnswer = Number(readlineSync.question('Your answer: '))
-    if (userAnswer === awaitAnswer) {
+    const userAnswer = readlineSync.question('Your answer: ')
+    if (Number(userAnswer) === awaitAnswer) {
       console.log('Correct!')
       i++
     }
