@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 import readlineSync from "readline-sync";
 import start from "./cli.js";
-export function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
+import { getRandomInt } from "./utils.js";
+
 const isEven = (num) => {
   if (num % 2 === 0) {
     return 'yes'

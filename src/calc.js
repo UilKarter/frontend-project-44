@@ -1,6 +1,6 @@
 import readlineSync from "readline-sync"
 import start from "./cli.js";
-import { getRandomInt } from "../src/even.js";
+import { getRandomInt } from "./utils.js";
 
 function randomOperator() {
   const ops = ['*', '-', '+']
@@ -27,7 +27,7 @@ export function brainCalc() {
         awaitAnswer = numOne + numTwo
         break
     }
-    const userAnswer = readlineSync.question('Your answer: ')
+    const userAnswer = Number(readlineSync.question('Your answer: '))
     if (userAnswer === awaitAnswer) {
       console.log('Correct!')
       i++
@@ -35,7 +35,6 @@ export function brainCalc() {
     else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${awaitAnswer}'.\nLet's try again, ${name}!`)
       i = 0
-      return
     }
 
   }
