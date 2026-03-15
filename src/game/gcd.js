@@ -1,25 +1,26 @@
-import readlineSync from "readline-sync"
-import start from "../cli.js";
-import { getRandomInt, divider } from "../utils.js";
+import readlineSync from 'readline-sync';
+import start from '../cli.js';
+import { getRandomInt, divider } from '../utils.js';
 
 const gcd = () => {
-  const name = start()
-  for (let i = 0; i < 3; i += 0) {
-    const num1 = getRandomInt(0, 100)
-    const num2 = getRandomInt(0, 100)
-    const awaitAnswer = divider(num1, num2)
-    console.log(`Question: ${num1} ${num2}`)
-    const userAnswer = (readlineSync.question('Your answer: '))
+  const name = start();
+  const maxRounds = 3;
+  for (let i = 0; i < maxRounds; i += 0) {
+    const num1 = getRandomInt(0, 100);
+    const num2 = getRandomInt(0, 100);
+    const awaitAnswer = divider(num1, num2);
+    console.log(`Question: ${num1} ${num2}`);
+    const userAnswer = (readlineSync.question('Your answer: '));
     if (Number(userAnswer) === awaitAnswer) {
-      console.log('Correct!')
-      i++
+      console.log('Correct!');
+      i++;
     }
     else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${awaitAnswer}'.\nLet's try again, ${name}!`)
-      i = 0
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${awaitAnswer}'.\nLet's try again, ${name}!`);
+      i = 0;
     }
   }
-  console.log(`Congratulations, ${name}!`)
-}
+  console.log(`Congratulations, ${name}!`);
+};
 
-export default gcd
+export default gcd;
