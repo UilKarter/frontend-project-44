@@ -1,6 +1,6 @@
 import readlineSync from "readline-sync"
-import start from "./cli.js";
-import { getRandomInt, divider } from "./utils.js";
+import start from "../cli.js";
+import { getRandomInt, divider } from "../utils.js";
 
 const gcd = () => {
   const name = start()
@@ -19,6 +19,7 @@ const gcd = () => {
       i = 0
     }
   }
+  console.log(`Congratulations, ${name}!`)
 }
 
 export default gcd

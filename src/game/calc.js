@@ -1,6 +1,6 @@
 import readlineSync from "readline-sync"
-import start from "./cli.js";
-import { getRandomInt, randomOperator } from "./utils.js";
+import start from "../cli.js";
+import { getRandomInt, randomOperator } from "../utils.js";
 
 const brainCalc = () => {
   const name = start()
@@ -31,7 +31,6 @@ const brainCalc = () => {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${awaitAnswer}'.\nLet's try again, ${name}!`)
       i = 0
     }
-
   }
   console.log(`Congratulations, ${name}!`)
 }

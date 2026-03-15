@@ -27,3 +27,14 @@ export function randomOperator() {
   let i = getRandomInt(0, 2)
   return ops[i]
 }
+export function isPrime(num) {
+  if (num <= 1) {
+    return 'no'
+  }
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return 'no'
+    }
+  }
+  return 'yes'
+};

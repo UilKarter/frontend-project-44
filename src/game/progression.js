@@ -1,6 +1,6 @@
 import readlineSync from "readline-sync"
-import start from "./cli.js";
-import { getRandomInt, makeProgression } from "./utils.js";
+import start from "../cli.js";
+import { getRandomInt, makeProgression } from "../utils.js";
 
 const progression = () => {
   const name = start()
@@ -23,5 +23,6 @@ const progression = () => {
       i = 0
     }
   }
+  console.log(`Congratulations, ${name}!`)
 }
 export default progression

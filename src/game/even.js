@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from "readline-sync";
-import start from "./cli.js";
-import { getRandomInt, isEven } from "./utils.js";
+import start from "../cli.js";
+import { getRandomInt, isEven } from "../utils.js";
 
 const brainEven = () => {
   const name = start()
