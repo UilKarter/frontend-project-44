@@ -5,7 +5,8 @@ import { getRandomInt, makeProgression } from '../utils.js';
 const progression = () => {
   const name = start();
   const maxRounds = 3;
-  for (let i = 0; i < maxRounds; i += 0) {
+  let correctAnswers = 0;
+  for (let i = 0; i < maxRounds; i++) {
     const start = getRandomInt(1, 20);
     const step = getRandomInt(1, 10);
     const length = getRandomInt(5, 10);
@@ -17,13 +18,15 @@ const progression = () => {
     const userAnswer = readlineSync.question('Your answer: ');
     if (Number(userAnswer) === awaitAnswer) {
       console.log('Correct!');
-      i++;
+      correctAnswers++;
     }
     else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${awaitAnswer}'.\nLet's try again, ${name}!`);
-      i = 0;
+      return;
     }
   }
-  console.log(`Congratulations, ${name}!`);
+  if (correctAnswers === 3) {
+    console.log(`Congratulations, ${name}!`);
+  }
 };
 export default progression;
