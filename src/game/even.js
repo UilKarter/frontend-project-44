@@ -26,7 +26,6 @@ const brainEven = () => {
   if (correctAnswers === 3) {
     console.log(`Congratulations, ${name}!`)
   }
-};
+}
 
-export default brainEven;
-
+export default brainEven
