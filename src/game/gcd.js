@@ -4,6 +4,7 @@ import { getRandomInt, divider } from '../utils.js';
 
 const gcd = () => {
   const name = start();
+  console.log('Find the greatest common divisor of given numbers.');
   const maxRounds = 3;
   let correctAnswers = 0;
   for (let i = 0; i < maxRounds; i++) {
