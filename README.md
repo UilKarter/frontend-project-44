@@ -47,4 +47,4 @@
    brain-prime
 [![asciicast](https://asciinema.org/a/gMwVEx5HA7j6gkqE.svg)](https://asciinema.org/a/gMwVEx5HA7j6gkqE)
 ## SonarQube 
-[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=UilKarter_frontend-project-44)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=UilKarter_frontend-project-44)](https://sonarcloud.io/summary/new_code?id=UilKarter_frontend-project-44)
