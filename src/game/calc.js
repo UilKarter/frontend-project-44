@@ -1,41 +1,25 @@
-import readlineSync from 'readline-sync'
-import start from '../cli.js'
+import gameRun from '../index.js'
 import { getRandomInt, randomOperator } from '../utils.js'
 
-const brainCalc = () => {
-  const name = start()
-  const maxRounds = 3
-  let correctAnswers = 0
-  for (let i = 0; i < maxRounds; i++) {
-    console.log('What is the result of the expression?')
-    const curOperator = randomOperator()
-    const numOne = getRandomInt(0, 100)
-    const numTwo = getRandomInt(0, 100)
-    console.log(`Question: ${numOne} ${curOperator} ${numTwo}`)
-    let awaitAnswer
-    switch (curOperator) {
+const calc = () => {
+  const curOperator = randomOperator()
+  const numOne = getRandomInt(0, 100)
+  const numTwo = getRandomInt(0, 100)
+  const question = `${numOne} ${curOperator} ${numTwo}`
+
+  const calcRes = (a, b, oper) => {
+    switch (oper) {
       case '*':
-        awaitAnswer = numOne * numTwo
-        break
+        return a * b
       case '-':
-        awaitAnswer = numOne - numTwo
-        break
+        return a - b
       case '+':
-        awaitAnswer = numOne + numTwo
-        break
-    }
-    const userAnswer = readlineSync.question('Your answer: ')
-    if (Number(userAnswer) === awaitAnswer) {
-      console.log('Correct!')
-      correctAnswers++
-    }
-    else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${awaitAnswer}'.\nLet's try again, ${name}!`)
-      return
+        return a + b
     }
   }
-  if (correctAnswers === 3) {
-    console.log(`Congratulations, ${name}!`)
-  }
+  const awaitAnswer = calcRes(numOne, numTwo, curOperator).toString()
+  return { question, awaitAnswer }
 }
-export default brainCalc
+const gameDesc = 'What is the result of the expression?'
+
+export default () => gameRun(calc, gameDesc)
