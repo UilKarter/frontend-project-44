@@ -9,7 +9,7 @@ const progression = () => {
   const hiddenIndex = getRandomInt(0, length - 1)
   const awaitAnswer = progbar[hiddenIndex].toString()
   progbar[hiddenIndex] = '..'
-  const question = progbar
+  const question = progbar.join(' ')
   return { question, awaitAnswer }
 }
 const gameDesc = 'What number is missing in the progression'
