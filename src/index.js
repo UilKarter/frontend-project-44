@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync'
-import start from './cli.js'
+import getName from './cli.js'
 
 const gameRun = (createRound, gameDesc) => {
-  const name = start()
+  const name = getName()
   console.log(gameDesc)
   const maxRounds = 3
   let correctAnswers = 0

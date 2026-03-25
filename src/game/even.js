@@ -1,9 +1,8 @@
-#!/usr/bin/env node
 import gameRun from '../index.js'
 import { getRandomInt, isEven } from '../utils.js'
 
 const even = () => {
-  const testNum = getRandomInt(0, 100)
+  const testNum = getRandomInt()
   const awaitAnswer = isEven(testNum)
   return { question: `${testNum}`, awaitAnswer }
 }

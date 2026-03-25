@@ -3,8 +3,8 @@ import { getRandomInt, randomOperator } from '../utils.js'
 
 const calc = () => {
   const curOperator = randomOperator()
-  const numOne = getRandomInt(0, 100)
-  const numTwo = getRandomInt(0, 100)
+  const numOne = getRandomInt()
+  const numTwo = getRandomInt()
   const question = `${numOne} ${curOperator} ${numTwo}`
 
   const calcRes = (a, b, oper) => {
